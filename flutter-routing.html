@@ -1,0 +1,152 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Flutter Routing Example</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="flutter-routing-example"
+                  title="Flutter Routing Example"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this example, we&#39;ll create a Flutter app that demonstrates basic routing between two screens using the <code>Navigator</code> widget.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="0">
+        <p>Before starting this example, make sure you have Flutter installed on your system. You can follow the <a href="https://flutter.dev/docs/get-started/install" target="_blank">official installation instructions</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Getting Started" duration="0">
+        <ol type="1">
+<li>Create a new Flutter project: <pre><code language="language-bash" class="language-bash">flutter create routing_example
+</code></pre>
+</li>
+<li>Navigate to the project directory: <pre><code language="language-bash" class="language-bash">cd routing_example
+</code></pre>
+</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating Screens" duration="0">
+        <p>First, let&#39;s create two screens: <code>HomeScreen</code> and <code>DetailScreen</code>.</p>
+<h2 is-upgraded>HomeScreen</h2>
+<p>Create a new Dart file named <code>home_screen.dart</code> in the <code>lib</code> directory and add the following code:</p>
+<pre><code language="language-dart" class="language-dart">import &#39;package:flutter/material.dart&#39;;
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(&#39;Home&#39;),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) =&gt; DetailScreen()),
+            );
+          },
+          child: Text(&#39;Go to Detail Screen&#39;),
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="DetailScreen" duration="0">
+        <p>Create another Dart file named detail_screen.dart in the lib directory and add the following code:</p>
+<pre><code language="language-dart" class="language-dart">import &#39;package:flutter/material.dart&#39;;
+
+class DetailScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(&#39;Detail&#39;),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text(&#39;Go back to Home Screen&#39;),
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Configuring Main File" duration="0">
+        <p>Open the lib/main.dart file in your Flutter project and replace the existing code with the following:</p>
+<pre><code language="language-dart" class="language-dart">import &#39;package:flutter/material.dart&#39;;
+import &#39;home_screen.dart&#39;;
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: &#39;Flutter Routing Example&#39;,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: HomeScreen(),
+    );
+  }
+}
+</code></pre>
+<p>In this code:</p>
+<p>We import the necessary packages, including material.dart. We define two screens: HomeScreen and DetailScreen. HomeScreen contains a button that navigates to DetailScreen when pressed. DetailScreen contains a button that navigates back to HomeScreen when pressed. In the main.dart file, we set HomeScreen as the initial route of the app.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
