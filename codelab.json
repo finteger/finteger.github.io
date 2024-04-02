@@ -1,0 +1,27 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-04-01T19:14:11-06:00",
+  "id": "unique-codelab-identifier",
+  "duration": 0,
+  "title": "Title of Your Code Lab",
+  "summary": "Summary of your codelab that is human readable",
+  "source": "index.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown",
+    "internetcomputer"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "A link where users can go to provide feedback (e.g. the git repo)",
+  "ga": "Google Analytics ID",
+  "url": "unique-codelab-identifier"
+}
