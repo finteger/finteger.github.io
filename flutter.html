@@ -1,0 +1,100 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Flutter Basic Layout Tutorial</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="code-labs-mobile-development"
+                  title="Flutter Basic Layout Tutorial"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>Flutter is a popular UI toolkit developed by Google for building natively compiled applications for mobile, web, and desktop from a single codebase. In this tutorial, we will explore the basics of creating layouts in Flutter.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Getting Started" duration="0">
+        <p>Before we begin, ensure that you have Flutter installed on your system. You can follow the <a href="https://flutter.dev/docs/get-started/install" target="_blank">official documentation</a> for installation instructions.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating a New Flutter Project" duration="0">
+        <p>First, let&#39;s create a new Flutter project. Open your terminal or command prompt and run the following command:</p>
+<pre><code language="language-bash" class="language-bash">flutter create basic_layout_tutorial
+</code></pre>
+<p>This command will create a new Flutter project named basic_layout_tutorial.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Understanding Widgets" duration="0">
+        <p>In Flutter, everything is a widget. Widgets are the basic building blocks of Flutter applications. There are two main types of widgets:</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Stateless Widgets: Widgets that do not require mutable state." duration="0">
+        <p>Stateful Widgets: Widgets that maintain mutable state. Creating a Simple Layout Let&#39;s create a simple layout with a text widget centered on the screen. Open the lib/main.dart file in your Flutter project and replace the existing code with the following:</p>
+<pre><code language="language-dart" class="language-dart">import &#39;package:flutter/material.dart&#39;;
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(&#39;Basic Layout Tutorial&#39;),
+        ),
+        body: Center(
+          child: Text(
+            &#39;Hello, Flutter!&#39;,
+            style: TextStyle(fontSize: 24.0),
+          ),
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+<p>In this code:</p>
+<p>We import the material.dart package, which contains Flutter&#39;s material design widgets. We define a MyApp class that extends StatelessWidget. In the build method of MyApp, we return a MaterialApp widget, which provides basic material design visual components. Inside the MaterialApp, we define a Scaffold widget, which provides a basic layout structure with app bars, drawers, and more. The Scaffold contains an AppBar with a title. The body of the Scaffold contains a Center widget, which centers its child vertically and horizontally. Inside the Center widget, we have a Text widget displaying the text &#34;Hello, Flutter!&#34;.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
