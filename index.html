@@ -1,0 +1,132 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Node.js &amp; Express.js Topics</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="code-labs-web-services"
+                  title="Node.js &amp; Express.js Topics"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Cookie-Parser" duration="0">
+        <p>In Express.js, cookie-parser is a middleware that parses cookies attached to the client request object. It helps to extract cookie data from the request headers and make it available in the req.cookies object for further processing within your Express application.</p>
+<p>Here&#39;s a brief explanation of how to use cookie-parser in Express.js:</p>
+<p>First, you need to install the cookie-parser module using npm or yarn: <code>npm install cookie-parser</code></p>
+<p>Then, you can require and use it in your Express application:</p>
+<pre><code language="language-javascript" class="language-javascript">const express = require(&#39;express&#39;);
+const cookieParser = require(&#39;cookie-parser&#39;);
+
+const app = express();
+
+// Use cookie-parser middleware
+app.use(cookieParser());
+
+// Define your routes and handle requests
+app.get(&#39;/&#39;, (req, res) =&gt; {
+ // Access cookies from the req.cookies object
+ const cookieValue = req.cookies.cookieName;
+ // Further processing...
+});
+
+// Start your Express server
+app.listen(3000, () =&gt; {
+ console.log(&#39;Server is running on port 3000&#39;);
+});
+</code></pre>
+<p>A cookie is a small piece of data sent from a website and stored on the user&#39;s computer by the user&#39;s web browser while the user is browsing. Cookies were designed to be a reliable mechanism for websites to remember stateful information (such as items added to a shopping cart) or to record the user&#39;s browsing activity (including clicking particular buttons, logging in, or recording which pages were visited in the past).</p>
+<p>Cookies serve several purposes, including:</p>
+<p>Session Management: Cookies are commonly used to manage user sessions. When a user logs in to a website, a session cookie is often used to keep track of the user&#39;s authenticated state. This helps the server recognize the user as they navigate through different pages of the website without requiring re-authentication on each page load.</p>
+<p>Personalization: Cookies can be used to remember user preferences and settings, such as language preferences or personalized content recommendations.</p>
+<p>Tracking and Analytics: Cookies are often used by website owners and third-party services for tracking user behavior and gathering analytics data. This data can be used to analyze website traffic, understand user demographics, and improve the user experience.</p>
+<p>Advertising: Cookies are also widely used in online advertising to track users&#39; browsing habits and display targeted advertisements based on their interests and behavior.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="JSON Web Token" duration="0">
+        <p>JSON Web Tokens (JWT) are a compact, URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.</p>
+<p>In an Express.js application, jsonwebtoken is often used to generate and verify JWTs. Below is an explanation of how to use jsonwebtoken in Express.js:</p>
+<p>First, you need to install the jsonwebtoken module: <code>npm install jsonwebtoken</code></p>
+<p>Then, you can use it in your Express application to generate and verify JWTs:</p>
+<pre><code language="language-javascript" class="language-javascript">const express = require(&#39;express&#39;);
+const jwt = require(&#39;jsonwebtoken&#39;);
+
+const app = express();
+
+// Secret key used to sign the JWT
+const secretKey = &#39;your_secret_key&#39;;
+
+// Define a route to generate a JWT
+app.get(&#39;/login&#39;, (req, res) =&gt; {
+  // Example payload for the JWT
+  const payload = {
+    userId: &#39;123456789&#39;,
+    username: &#39;exampleuser&#39;
+  };
+
+  // Generate a JWT
+  const token = jwt.sign(payload, secretKey, { expiresIn: &#39;1h&#39; });
+
+  res.json({ token });
+});
+
+// Define a route to verify and decode a JWT
+app.get(&#39;/protected&#39;, (req, res) =&gt; {
+  // Extract token from request headers or query parameters
+  const token = req.headers.authorization.split(&#39; &#39;)[1];
+
+  // Verify the JWT
+  jwt.verify(token, secretKey, (err, decoded) =&gt; {
+    if (err) {
+      return res.status(401).json({ message: &#39;Unauthorized&#39; });
+    }
+    // JWT is valid, decoded contains the payload
+    res.json(decoded);
+  });
+});
+
+// Start your Express server
+app.listen(3000, () =&gt; {
+  console.log(&#39;Server is running on port 3000&#39;);
+});
+</code></pre>
+<p>JSON Web Tokens (JWTs) are a means of representing claims securely between two parties. They consist of three parts: a header, a payload, and a signature. JWTs are commonly used for authentication and information exchange in web applications.</p>
+<p>JWTs serve several purposes, including:</p>
+<p>Authentication: JWTs are commonly used as authentication tokens. When a user logs in to a web application, the server can generate a JWT containing information about the user (such as user ID, username, and roles) and send it back to the client. The client then includes this JWT in subsequent requests to authenticate itself.</p>
+<p>Authorization: JWTs can contain claims about the user&#39;s permissions or roles. These claims can be used by the server to authorize the user&#39;s access to certain resources or perform certain actions within the application.</p>
+<p>Stateless Sessions: Unlike traditional session-based authentication mechanisms, JWTs are stateless. This means that the server does not need to store session state on the server-side, which can improve scalability and reduce the burden on the server.</p>
+<p>Information Exchange: JWTs can be used to securely exchange information between different parties in a web application. For example, a server can issue a JWT containing user information, which can then be passed to a third-party service for further processing.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
