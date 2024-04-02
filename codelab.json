@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-04-01T20:38:02-06:00",
+  "id": "flutter-layout-2342",
+  "duration": 0,
+  "title": "Flutter Layout Tutorial",
+  "summary": "Flutter Layout",
+  "source": "index.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown",
+    "internetcomputer"
+  ],
+  "tags": [
+    "web"
+  ],
+  "url": "flutter-layout-2342"
+}
