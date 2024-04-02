@@ -1,0 +1,108 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Flutter ListView Codelab</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="flutter-listview-codelab"
+                  title="Flutter ListView Codelab"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this codelab, we&#39;ll explore how to use the ListView widget in Flutter to create scrollable lists of widgets.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="0">
+        <p>Before starting this codelab, make sure you have Flutter installed on your system. You can follow the <a href="https://flutter.dev/docs/get-started/install" target="_blank">official installation instructions</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Getting Started" duration="0">
+        <ol type="1">
+<li>Create a new Flutter project: <pre><code language="language-bash" class="language-bash">flutter create listview_codelab
+</code></pre>
+</li>
+<li>Navigate to the project directory: <pre><code language="language-bash" class="language-bash">cd listview_codelab
+</code></pre>
+</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating a ListView" duration="0">
+        <p>Open the <code>lib/main.dart</code> file in your Flutter project and replace the existing code with the following:</p>
+<pre><code language="language-dart" class="language-dart">import &#39;package:flutter/material.dart&#39;;
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(&#39;ListView Codelab&#39;),
+        ),
+        body: ListView(
+          children: &lt;Widget&gt;[
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text(&#39;Map&#39;),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo),
+              title: Text(&#39;Album&#39;),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text(&#39;Phone&#39;),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+<p>In this code:</p>
+<p>We define a simple Flutter app with a MyApp widget that extends StatelessWidget. Inside the build method of MyApp, we return a MaterialApp with a Scaffold. The Scaffold contains an AppBar with a title. The body of the Scaffold contains a ListView widget. Inside the ListView, we have three ListTile widgets, each representing an item in the list. Each ListTile contains an icon and a title.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
