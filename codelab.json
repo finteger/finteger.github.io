@@ -6,7 +6,7 @@
   "updated": "2024-04-01T19:14:11-06:00",
   "id": "unique-codelab-identifier",
   "duration": 0,
-  "title": "Title of Your Code Lab",
+  "title": "Basic Setup of Node.js/Express.js App",
   "summary": "Summary of your codelab that is human readable",
   "source": "index.md",
   "theme": "",
