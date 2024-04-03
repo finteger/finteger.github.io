@@ -1,0 +1,115 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Flutter Alert Dialog Codelab</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="flutter-alert-codelab"
+                  title="Flutter Alert Dialog Codelab"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this codelab, we&#39;ll explore how to use the AlertDialog widget in Flutter to display alert messages and gather user input.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="0">
+        <p>Before starting this codelab, make sure you have Flutter installed on your system. You can follow the official installation instructions.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating an Alert Dialog" duration="0">
+        <p>Open the lib/main.dart file in your Flutter project and replace the existing code with the following:</p>
+<pre><code language="language-dart" class="language-dart">import &#39;package:flutter/material.dart&#39;;
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: AlertDialogCodelab(),
+    );
+  }
+}
+
+class AlertDialogCodelab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(&#39;AlertDialog Codelab&#39;),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text(&#39;Alert&#39;),
+                  content: Text(&#39;This is an alert dialog.&#39;),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(&#39;OK&#39;),
+                    ),
+                  ],
+                );
+              },
+            );
+          },
+          child: Text(&#39;Show Alert&#39;),
+        ),
+      ),
+    );
+  }
+}
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="In this code:" duration="0">
+        <p>We define a simple Flutter app with a MyApp widget that extends StatelessWidget. Inside the build method of MyApp, we return a MaterialApp with an AlertDialogCodelab widget as the home. AlertDialogCodelab is a StatelessWidget that displays a Scaffold with an AppBar and a Centered ElevatedButton. When the button is pressed, it shows an AlertDialog with a title, content, and an OK button. The AlertDialog is created using the showDialog function, which takes a context and a builder function. The builder function returns the AlertDialog widget with the desired title, content, and actions. The OK button closes the AlertDialog when pressed.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
