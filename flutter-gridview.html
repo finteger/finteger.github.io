@@ -1,0 +1,107 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Flutter GridView Codelab</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="flutter-gridview-codelab"
+                  title="Flutter GridView Codelab"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this code lab, you&#39;ll learn how to create grid layouts in Flutter using various widgets and techniques.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Objectives" duration="0">
+        <p>By the end of this code lab, you will be able to:</p>
+<p>-Create grid layouts in Flutter using GridView and GridView.builder. -Customize grid layouts with different properties like grid spacing, alignment, and scrolling behavior. -Implement responsive grid layouts for various screen sizes.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Getting Started" duration="0">
+        <p>To get started, create a new Flutter project or open an existing project in your preferred editor.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating a GridView" duration="0">
+        <p>Now, let&#39;s create a basic grid layout using the GridView widget.</p>
+<pre><code language="language-dart" class="language-dart">import &#39;package:flutter/material.dart&#39;;
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(&#39;Grid Layout Demo&#39;),
+        ),
+        body: GridView.count(
+          crossAxisCount: 2,
+          children: List.generate(10, (index) {
+            return Center(
+              child: Text(
+                &#39;Item $index&#39;,
+                style: TextStyle(fontSize: 20),
+              ),
+            );
+          }),
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Customizing the Grid Layout" duration="0">
+        <p>Experiment with different properties of the GridView widget to customize the grid layout according to your requirements. You can adjust properties like crossAxisCount, mainAxisSpacing, crossAxisSpacing, childAspectRatio, and more.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating Responsive Grid Layouts" duration="0">
+        <p>To create responsive grid layouts, consider using GridView.builder along with SliverGridDelegateWithFixedCrossAxisCount or SliverGridDelegateWithMaxCrossAxisExtent. These delegates allow you to create grids that adapt to different screen sizes.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
