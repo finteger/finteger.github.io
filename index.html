@@ -1,0 +1,317 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Node.js &amp; Express.js Topics</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="code-labs-web-services"
+                  title="Node.js &amp; Express.js Topics"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Cookie-Parser" duration="0">
+        <p>In Express.js, cookie-parser is a middleware that parses cookies attached to the client request object. It helps to extract cookie data from the request headers and make it available in the req.cookies object for further processing within your Express application.</p>
+<p>Here&#39;s a brief explanation of how to use cookie-parser in Express.js:</p>
+<p>First, you need to install the cookie-parser module using npm or yarn: <code>npm install cookie-parser</code></p>
+<p>Then, you can require and use it in your Express application:</p>
+<pre><code language="language-javascript" class="language-javascript">const express = require(&#39;express&#39;);
+const cookieParser = require(&#39;cookie-parser&#39;);
+
+const app = express();
+
+// Use cookie-parser middleware
+app.use(cookieParser());
+
+// Define your routes and handle requests
+app.get(&#39;/&#39;, (req, res) =&gt; {
+ // Access cookies from the req.cookies object
+ const cookieValue = req.cookies.cookieName;
+ // Further processing...
+});
+
+// Start your Express server
+app.listen(3000, () =&gt; {
+ console.log(&#39;Server is running on port 3000&#39;);
+});
+</code></pre>
+<p>A cookie is a small piece of data sent from a website and stored on the user&#39;s computer by the user&#39;s web browser while the user is browsing. Cookies were designed to be a reliable mechanism for websites to remember stateful information (such as items added to a shopping cart) or to record the user&#39;s browsing activity (including clicking particular buttons, logging in, or recording which pages were visited in the past).</p>
+<p>Cookies serve several purposes, including:</p>
+<p>Session Management: Cookies are commonly used to manage user sessions. When a user logs in to a website, a session cookie is often used to keep track of the user&#39;s authenticated state. This helps the server recognize the user as they navigate through different pages of the website without requiring re-authentication on each page load.</p>
+<p>Personalization: Cookies can be used to remember user preferences and settings, such as language preferences or personalized content recommendations.</p>
+<p>Tracking and Analytics: Cookies are often used by website owners and third-party services for tracking user behavior and gathering analytics data. This data can be used to analyze website traffic, understand user demographics, and improve the user experience.</p>
+<p>Advertising: Cookies are also widely used in online advertising to track users&#39; browsing habits and display targeted advertisements based on their interests and behavior.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="JSON Web Token" duration="0">
+        <p>JSON Web Tokens (JWT) are a compact, URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.</p>
+<p>In an Express.js application, jsonwebtoken is often used to generate and verify JWTs. Below is an explanation of how to use jsonwebtoken in Express.js:</p>
+<p>First, you need to install the jsonwebtoken module: <code>npm install jsonwebtoken</code></p>
+<p>Then, you can use it in your Express application to generate and verify JWTs:</p>
+<pre><code language="language-javascript" class="language-javascript">const express = require(&#39;express&#39;);
+const jwt = require(&#39;jsonwebtoken&#39;);
+
+const app = express();
+
+// Secret key used to sign the JWT
+const secretKey = &#39;your_secret_key&#39;;
+
+// Define a route to generate a JWT
+app.get(&#39;/login&#39;, (req, res) =&gt; {
+  // Example payload for the JWT
+  const payload = {
+    userId: &#39;123456789&#39;,
+    username: &#39;exampleuser&#39;
+  };
+
+  // Generate a JWT
+  const token = jwt.sign(payload, secretKey, { expiresIn: &#39;1h&#39; });
+
+  res.json({ token });
+});
+
+// Define a route to verify and decode a JWT
+app.get(&#39;/protected&#39;, (req, res) =&gt; {
+  // Extract token from request headers or query parameters
+  const token = req.headers.authorization.split(&#39; &#39;)[1];
+
+  // Verify the JWT
+  jwt.verify(token, secretKey, (err, decoded) =&gt; {
+    if (err) {
+      return res.status(401).json({ message: &#39;Unauthorized&#39; });
+    }
+    // JWT is valid, decoded contains the payload
+    res.json(decoded);
+  });
+});
+
+// Start your Express server
+app.listen(3000, () =&gt; {
+  console.log(&#39;Server is running on port 3000&#39;);
+});
+</code></pre>
+<p>JSON Web Tokens (JWTs) are a means of representing claims securely between two parties. They consist of three parts: a header, a payload, and a signature. JWTs are commonly used for authentication and information exchange in web applications.</p>
+<p>JWTs serve several purposes, including:</p>
+<p>Authentication: JWTs are commonly used as authentication tokens. When a user logs in to a web application, the server can generate a JWT containing information about the user (such as user ID, username, and roles) and send it back to the client. The client then includes this JWT in subsequent requests to authenticate itself.</p>
+<p>Authorization: JWTs can contain claims about the user&#39;s permissions or roles. These claims can be used by the server to authorize the user&#39;s access to certain resources or perform certain actions within the application.</p>
+<p>Stateless Sessions: Unlike traditional session-based authentication mechanisms, JWTs are stateless. This means that the server does not need to store session state on the server-side, which can improve scalability and reduce the burden on the server.</p>
+<p>Information Exchange: JWTs can be used to securely exchange information between different parties in a web application. For example, a server can issue a JWT containing user information, which can then be passed to a third-party service for further processing.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Rate-Limit" duration="0">
+        <p>In an Express.js application, rate limiting is a technique used to limit the number of requests a client can make to an API within a certain period of time. This is often done to prevent abuse of the server&#39;s resources and to ensure fair usage for all clients. There are several rate limiting middleware packages available for Express.js, one popular choice being express-rate-limit.</p>
+<p>Here&#39;s how you can use express-rate-limit in your Express.js application:</p>
+<p>First, you need to install the express-rate-limit module: <code>npm install express-rate-limit</code></p>
+<p>Then, you can use it in your Express application to set up rate limiting for specific routes or for all routes:</p>
+<pre><code language="language-javascript" class="language-javascript">const express = require(&#39;express&#39;);
+const rateLimit = require(&#39;express-rate-limit&#39;);
+
+const app = express();
+
+// Apply rate limiting middleware for all routes
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limit each IP to 100 requests per windowMs
+});
+
+// Apply the rate limiter to all requests
+app.use(limiter);
+
+// Define your routes and handle requests
+app.get(&#39;/&#39;, (req, res) =&gt; {
+  res.send(&#39;Hello World!&#39;);
+});
+
+// Start your Express server
+app.listen(3000, () =&gt; {
+  console.log(&#39;Server is running on port 3000&#39;);
+});
+</code></pre>
+<p>Rate limiting helps to protect your server from being overwhelmed by too many requests from a single client or a group of clients. It imposes restrictions on the number of requests a client can make within a certain period of time.</p>
+<p>Rate limiting serves several purposes, including:</p>
+<p>Preventing Abuse: Rate limiting helps prevent abuse of your server&#39;s resources by limiting the number of requests that a client can make within a given time frame. This can help mitigate denial-of-service (DoS) attacks, brute force attacks, and other forms of abuse.</p>
+<p>Ensuring Fair Usage: Rate limiting ensures fair usage of your server&#39;s resources by limiting the number of requests each client can make. This prevents any single client from monopolizing the server&#39;s resources and allows other clients to access the server.</p>
+<p>Improving Stability: By limiting the rate of incoming requests, rate limiting helps to stabilize your server and prevent it from becoming overloaded. This can improve the overall performance and reliability of your application.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Connecting to MongoDB with Mongoose" duration="0">
+        <p>When working with MongoDB and Express.js, Mongoose is a popular choice for interacting with MongoDB databases. Mongoose provides a straightforward way to model your application data and perform CRUD operations. Below is an example of how you can connect your Express.js application to a MongoDB database using Mongoose:</p>
+<p>First, you need to install the mongoose module: <code>npm install mongoose</code></p>
+<p>Then, you can use it in your Express application to connect to your MongoDB database:</p>
+<pre><code language="language-javascript" class="language-javascript">const express = require(&#39;express&#39;);
+const mongoose = require(&#39;mongoose&#39;);
+
+const app = express();
+
+// MongoDB connection URL
+const mongoURI = &#39;mongodb://localhost:27017/mydatabase&#39;;
+
+// Connect to MongoDB
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() =&gt; {
+    console.log(&#39;MongoDB connected&#39;);
+  })
+  .catch((err) =&gt; {
+    console.error(&#39;MongoDB connection error:&#39;, err);
+  });
+
+// Define your routes and handle requests
+app.get(&#39;/&#39;, (req, res) =&gt; {
+  res.send(&#39;Hello World!&#39;);
+});
+
+// Start your Express server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () =&gt; {
+  console.log(`Server is running on port ${PORT}`);
+});
+</code></pre>
+<p>In this example:</p>
+<p>We require express and mongoose modules. We define the MongoDB connection URL. Replace ‘mongodb://localhost:27017/mydatabase&#39; with your MongoDB connection URL, including the database name. We use mongoose.connect() to connect to MongoDB. The useNewUrlParser and useUnifiedTopology options are recommended to avoid deprecation warnings. We handle successful and failed connection attempts with .then() and .catch() respectively. We define a basic route handler for the root route (&#39;/&#39;).</p>
+<p>Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a straightforward, schema-based solution to model your application data. Key features of Mongoose include:</p>
+<p>Schema Definition: Mongoose allows you to define schemas for your data models. Schemas define the structure of documents within a collection, including the fields and their types, validation rules, default values, and more.</p>
+<p>Model Creation: Once you have defined a schema, you can create Mongoose models based on that schema. Models represent collections in MongoDB and provide an interface for interacting with the database.</p>
+<p>CRUD Operations: Mongoose provides methods for performing CRUD (Create, Read, Update, Delete) operations on MongoDB documents. These methods are intuitive and easy to use, allowing you to interact with your data in a straightforward manner.</p>
+<p>Middleware: Mongoose supports middleware functions that allow you to define pre and post hooks for various operations, such as validation, saving, updating, and removing documents. Middleware functions provide a way to execute custom logic before or after database operations.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating a schema with mongoose" duration="0">
+        <p>Creating a schema with Mongoose involves defining the structure of your data model. Schemas in Mongoose are blueprints that define the shape of documents within a MongoDB collection. Here&#39;s how you can create a schema and a corresponding model using Mongoose in your Express.js application:</p>
+<p>First, ensure you have mongoose installed: <code>npm install mongoose</code></p>
+<p>Then, you can define a schema and create a model using Mongoose:</p>
+<pre><code language="language-javascript" class="language-javascript">const mongoose = require(&#39;mongoose&#39;);
+
+// Define a schema for your data model
+const userSchema = new mongoose.Schema({
+  username: String,
+  email: String,
+  age: Number,
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+// Create a model based on the schema
+const User = mongoose.model(&#39;User&#39;, userSchema);
+
+// Export the model to use in other parts of your application
+module.exports = User;
+</code></pre>
+<p>Field Definitions: Each field in the schema corresponds to a property of the document. You can define the data type of each field (String, Number, Date, Boolean, etc.), as well as additional properties such as required, default, unique, min, max, enum, etc.</p>
+<p>Schema Options: You can provide various options to the schema, such as setting the collection name, specifying timestamps (timestamps: true), enabling versioning (versionKey: false), etc.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Using Bcrypt for Password Hashing" duration="0">
+        <p>Open the file where you handle user authentication (e.g., auth.js or userController.js) and follow the steps below.</p>
+<p>Step 1: Import the bcrypt package Import the bcrypt package at the top of your file:</p>
+<pre><code language="language-bash" class="language-bash">const bcrypt = require(&#39;bcrypt&#39;);
+</code></pre>
+<p>Step 2: Hashing Passwords When creating or updating a user&#39;s password, use bcrypt to hash the password before storing it in the database:</p>
+<pre><code language="language-javascript" class="language-javascript">const saltRounds = 10;
+
+// Example: Creating a new user
+const createUser = async (username, password) =&gt; {
+  try {
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    // Store hashedPassword in the database along with other user details
+    console.log(&#39;User created with hashed password:&#39;, hashedPassword);
+  } catch (error) {
+    console.error(&#39;Error creating user:&#39;, error);
+  }
+};
+</code></pre>
+<p>Step 3: Comparing Passwords When authenticating a user, compare the provided password with the hashed password stored in the database using bcrypt&#39;s compare method:</p>
+<pre><code language="language-javascript" class="language-javascript">// Example: Authenticating a user
+const authenticateUser = async (username, password) =&gt; {
+  try {
+    // Retrieve hashed password from the database based on the username
+    const hashedPassword = &#39;hashedPasswordFromDatabase&#39;; // Replace with actual hashed password
+    const match = await bcrypt.compare(password, hashedPassword);
+    if (match) {
+      console.log(&#39;Authentication successful&#39;);
+    } else {
+      console.log(&#39;Authentication failed: Incorrect password&#39;);
+    }
+  } catch (error) {
+    console.error(&#39;Error authenticating user:&#39;, error);
+  }
+};
+</code></pre>
+<p>Conclusion By following this codelab, you&#39;ve learned how to use the bcrypt package in Express.js to securely hash and compare passwords, enhancing the security of your application&#39;s authentication system. Remember to always handle sensitive user data with care and follow best practices for password storage and authentication.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Using Morgan for Request Logging" duration="0">
+        <p>Step 1: Import the Morgan package Import the Morgan package at the top of your main file:</p>
+<pre><code language="language-javascript" class="language-javascript">const morgan = require(&#39;morgan&#39;);
+</code></pre>
+<p>Step 2: Configure Morgan Middleware Add Morgan as middleware to your Express application to log HTTP requests. You can choose the logging format according to your preferences. For example, to log in the &#34;combined&#34; format:</p>
+<pre><code language="language-javascript" class="language-javascript">const morganJSONFormat = () =&gt; JSON.stringify({
+    method: &#39;:method&#39;,
+    url: &#39;:url&#39;,
+    http_version: &#39;:http-version&#39;,
+    remote_addr: &#39;:response-time&#39;,
+    status: &#39;:status&#39;,
+    content_length: &#39;:res[content-length]&#39;,
+    timestamp: &#39;:date[iso]&#39;,
+    user_agent: &#39;:user-agent&#39;,
+});
+
+const logFilePath = path.join(__dirname, &#39;access.log&#39; );
+
+
+const accessLogStream = fs.createWriteStream(logFilePath, {flags: &#39;a&#39;});
+
+
+
+app.use(morgan(morganJSONFormat(), {stream: accessLogStream}));
+</code></pre>
+<p>What the code does: morganJSONFormat: This is a function that defines a custom log format using Morgan tokens. Morgan allows you to define custom log formats by specifying tokens that will be replaced with actual request information when a request is logged. In this function:</p>
+<p>:method, :url, :http-version, :response-time, :status, :res[content-length], :date[iso], and :user-agent are Morgan tokens representing various request properties such as HTTP method, URL, HTTP version, response time, status code, content length, timestamp, and user agent respectively. These tokens will be replaced with actual values from the HTTP request when logging. The function then converts the formatted log information into a JSON string. logFilePath: This variable specifies the path to the log file where the HTTP request logs will be written. It uses the path.join() method to join the directory name of the current module (__dirname) with the file name ‘access.log&#39;.</p>
+<p>accessLogStream: This variable creates a writable stream using Node.js&#39;s fs.createWriteStream() method. It specifies the logFilePath as the file where the stream will write data. The { flags: ‘a&#39; } option indicates that the stream will append data to the file if it already exists, or create the file if it doesn&#39;t exist.</p>
+<p>app.use(): This is an Express.js middleware registration function. Here, it&#39;s used to register the Morgan middleware with the Express application. The morgan() function takes two arguments:</p>
+<p>The first argument is the custom log format defined by the morganJSONFormat function. The second argument is an options object specifying the stream where the log output will be written. Here, it&#39;s set to accessLogStream, indicating that the log entries will be written to the access.log file.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
