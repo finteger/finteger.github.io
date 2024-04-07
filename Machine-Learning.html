@@ -1,0 +1,97 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Machine Learning with Python</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="machine-learning-python"
+                  title="Machine Learning with Python"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Linear Regression" duration="0">
+        <h2 is-upgraded>Introduction</h2>
+<p>Linear regression is a fundamental statistical technique used for modeling the relationship between a dependent variable (target) and one or more independent variables (features). In this code lab, we&#39;ll implement simple linear regression to predict a continuous variable based on a single input feature.</p>
+<h2 is-upgraded>Step 1: Import Libraries</h2>
+<p>We start by importing the necessary libraries:</p>
+<pre><code language="language-python" class="language-python">import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+import matplotlib.pyplot as plt
+</code></pre>
+<p><code>numpy: For numerical operations and array manipulations.<br> train_test_split: For splitting the data into training and test sets.<br> LinearRegression: From scikit-learn, for implementing linear regression.<br> mean_squared_error: For evaluating the performance of the model.<br> matplotlib.pyplot: For data visualization.<br></code></p>
+<h2 is-upgraded>Step 2: Generate Sample Data</h2>
+<p>We generate sample data with a linear relationship and some random noise:</p>
+<pre><code language="language-python" class="language-python">np.random.seed(0)
+X = 2 * np.random.rand(100, 1)  # Generate 100 random numbers between 0 and 2
+y = 4 + 3 * X + np.random.randn(100, 1)  # Linear relationship with noise
+</code></pre>
+<p><code>X: Input feature (independent variable).<br> y: Target variable (dependent variable).<br></code></p>
+<h2 is-upgraded>Step 3: Split Data</h2>
+<p>We split the data into training and test sets:</p>
+<pre><code language="language-python" class="language-python">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+</code></pre>
+<h2 is-upgraded>Step 4: Train the Model</h2>
+<p>We train a linear regression model on the training data:</p>
+<pre><code language="language-python" class="language-python">model = LinearRegression()
+model.fit(X_train, y_train)
+</code></pre>
+<h2 is-upgraded>Step 5: Make Predictions</h2>
+<p>We use the trained model to make predictions on the test data:</p>
+<pre><code language="language-python" class="language-python">y_pred = model.predict(X_test)
+</code></pre>
+<h2 is-upgraded>Step 6: Evaluate the Model</h2>
+<p>We calculate the mean squared error to evaluate the performance of the model:</p>
+<pre><code language="language-python" class="language-python">mse = mean_squared_error(y_test, y_pred)
+</code></pre>
+<h2 is-upgraded>Step 7: Visualization</h2>
+<p>We plot the test data points and the regression line:</p>
+<pre><code language="language-python" class="language-python">plt.scatter(X_test, y_test, color=&#39;blue&#39;)
+plt.plot(X_test, y_pred, color=&#39;red&#39;)
+plt.title(&#39;Linear Regression&#39;)
+plt.xlabel(&#39;X&#39;)
+plt.ylabel(&#39;y&#39;)
+plt.show()
+</code></pre>
+<h2 is-upgraded>Step 8: Output</h2>
+<p>We print the coefficients of the linear regression model, the intercept, and the mean squared error:</p>
+<pre><code language="language-python" class="language-python">print(&#39;Coefficients:&#39;, model.coef_)
+print(&#39;Intercept:&#39;, model.intercept_)
+print(&#39;Mean Squared Error:&#39;, mse)
+</code></pre>
+<h2 is-upgraded>Conclusion</h2>
+<p>In this code lab, we implemented simple linear regression to predict a continuous variable based on a single input feature. We trained the model, made predictions, evaluated its performance, and visualized the results. Linear regression is a powerful technique used in various fields, including finance, economics, and machine learning. Experiment with different datasets and explore more advanced regression techniques for more complex modeling tasks.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
