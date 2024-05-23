@@ -1,0 +1,163 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Grid &amp; Flexbox Layout</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="css-grid-flexbox"
+                  title="Grid &amp; Flexbox Layout"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Flexbox" duration="0">
+        <p>Setting an element to <code>display: flex;</code> establishes a flex container, where its child elements become flex items. By default, flex items will shrink to fit their content width and expand to fill the available space in the container. However, this behavior can be modified using various flex properties such as flex-basis, flex-grow, and flex-shrink.</p>
+<ul>
+<li><code>flex-basis</code> sets the initial main size of a flex item. It can be a length (e.g., pixels) or a percentage.</li>
+<li><code>flex-grow</code> determines how much a flex item should grow relative to the other flex items in the container when there&#39;s extra space available.</li>
+<li><code>flex-shrink</code> determines how much a flex item should shrink relative to the other flex items in the container when there&#39;s not enough space available.</li>
+</ul>
+<pre><code language="language-html" class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+&lt;meta charset=&#34;UTF-8&#34;&gt;
+&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+&lt;title&gt;Flexbox Example&lt;/title&gt;
+&lt;style&gt;
+
+    .container {
+        display: flex;
+        justify-content: center; /* horizontal alignment */
+        align-items: center;   /* vertical alignment */
+        width: 100%;
+        height:200px;
+        border: 1px solid #ccc;
+    }
+    .item {
+        flex: 1; /* grow if there&#39;s extra space */
+        border: 1px solid #333;
+    }
+    .item1 {
+        flex-basis: 100px; /* initial width */
+        flex-grow: 1; /* grow if there&#39;s extra space */
+        flex-shrink: 1; /* shrink if there&#39;s not enough space */
+    }
+    .item2 {
+        flex-basis: 200px; /* initial width */
+        flex-grow: 2; /* grow twice as much as item1 */
+        flex-shrink: 0; /* don&#39;t shrink */
+    }
+     .item3 {
+        flex: 0 0 30%;
+        /* shorthand: flex: [flex-grow] [flex-shrink] [flex-basis]; */
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;item item1&#34;&gt;Item 1&lt;/div&gt;
+        &lt;div class=&#34;item item2&#34;&gt;Item 2&lt;/div&gt;
+        &lt;div class=&#34;item item3&#34;&gt;Item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 is-upgraded>Output</h2>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Grid" duration="0">
+        <p>Setting an element to <code>display: grid;</code> establishes a grid container.  The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.</p>
+<ul>
+<li><code>grid-template-rows</code>: Defines the size of each row in the grid.</li>
+<li><code>grid-template-columns</code>: Defines the size of each column in the grid.</li>
+<li><code>grid-auto-flow</code>: Determines how auto-placed items are placed in the grid.</li>
+<li><code>grid-gap</code>: Sets the size of the gap between grid tracks (rows and columns).</li>
+<li><code>align-items</code>: Aligns grid items along the block (column) axis when the items do not use all the space on the cross (row) axis.</li>
+<li><code>justify-items</code>: Aligns grid items along the inline (row) axis when the items do not use all the space on the main (column) axis.</li>
+<li><code>grid-column</code>: Specifies the starting and/or ending position of a grid item along the inline (row) axis.</li>
+<li><code>grid-row</code>: Specifies the starting and/or ending position of a grid item along the block (column) axis.</li>
+<li><code>other grid properties</code>: Any other grid-related properties you want to set, such as grid-template-areas, grid-auto-rows, grid-auto-columns, etc.</li>
+</ul>
+<pre><code language="language-html" class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+&lt;meta charset=&#34;UTF-8&#34;&gt;
+&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+&lt;title&gt;CSS Grid Example&lt;/title&gt;
+&lt;style&gt;
+
+/* 1fr means one fractional unit.  It&#39;s basically the available space which you can add columns or rows.  You can set explicit values like 100px, for instance */
+
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Creates two columns with a ratio of 1:1 */
+        grid-template-rows: 1fr 1fr 1fr; /* Creates two rows with a ratio of 1:1 */
+        grid-gap: 10px; /* Gap between grid items */
+    }
+
+    .item1 {
+        grid-column: span 1; /* Span across both columns */
+        background-color: #ccc;
+        padding: 20px;
+    }
+
+    .item2 {
+        grid-column: 2; /* Start at the second column */
+        grid-row: span 3; /* Span across both rows */
+        background-color: #ccc;
+        padding: 20px;
+    }
+    
+        .item3 {
+        grid-column: 1; 
+        grid-row: span 2; /* Span across both rows */
+        background-color: #ccc;
+        padding: 20px;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;item1&#34;&gt;Item 1&lt;/div&gt;
+        &lt;div class=&#34;item2&#34;&gt;Item 2&lt;/div&gt;
+        &lt;div class=&#34;item3&#34;&gt;Item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 is-upgraded>Output</h2>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
