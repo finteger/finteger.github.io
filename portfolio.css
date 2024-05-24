@@ -11,7 +11,7 @@ ter* {
 
       header {
         display: grid;
-        grid-template-columns: 1fr 1fr 30%;
+        grid-template-columns: 1fr 1fr 1fr;
         justify-content: start;
         align-items: center;
         background: #FFCC80;
