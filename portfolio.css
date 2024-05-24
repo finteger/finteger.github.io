@@ -27,7 +27,10 @@
         height: 80px;
       }
 
-    
+      figure {
+        text-align: center;
+        margin-left: 30px;
+      }
 
       #container {
         display: flex;
