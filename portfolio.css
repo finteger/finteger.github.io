@@ -1,4 +1,4 @@
-* {
+ * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -21,13 +21,13 @@
         z-index: 1;
       }
 
-      #profilePicture {
+      #profilepicture {
         width: 83px;
         height: 80px;
       }
 
       figure {
-        text-align: center;
+        text-align: centre;
         margin-left: 30px;
       }
 
@@ -39,31 +39,18 @@
 
       aside {
         flex: 0 0 20%;
-        background: #FFF;
+        background: #fff;
         padding: 20px;
         border-left: 1px solid #000;
       }
 
       nav {
-        flex: 0 0 14%;
+        flex: 0 0 17%;
         justify-content: space-around;
         align-items: start;
         font-family: verdana;
         background: #90CAF9;
         padding: 20px;
-      }
-
-      nav i {
-        font-size: 40px;
-        margin: 10px;
-      }
-
-      nav ul li:nth-child(2) {
-        color: blue;
-      }
-
-      nav ul li:nth-child(3) {
-        color: gray;
       }
 
       nav span {
@@ -79,9 +66,22 @@
         font-weight: 300;
       }
 
+      nav i {
+        font-size: 40px;
+        margin: 10px;
+      }
+
+      nav ul li:nth-child(2) {
+        color: blue;
+      }
+
+      nav ul li:nth-child(3) {
+        color: gray;
+      }
+
       main {
         flex: 1;
-        background: #FFF;
+        background: #fff;
         padding: 20px;
         height: 100%;
       }
