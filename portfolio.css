@@ -1,0 +1,117 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+      }
+
+      header {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        background: #FFCC80;
+        height: 110px;
+        width: 100%;
+        box-shadow: 2px 2px 3px gray;
+        position: relative;
+        z-index: 1;
+      }
+
+      #profilePicture {
+        width: 83px;
+        height: 80px;
+      }
+
+      figure {
+        text-align: center;
+        margin-left: 30px;
+      }
+
+      #container {
+        display: flex;
+        background: #E0E0E0;
+        height: calc(100% - 100px);
+      }
+
+      aside {
+        flex: 0 0 20%;
+        background: #FFF;
+        padding: 20px;
+        border-left: 1px solid #000;
+      }
+
+      nav {
+        flex: 0 0 17%;
+        justify-content: space-around;
+        align-items: start;
+        font-family: verdana;
+        background: #90CAF9;
+        padding: 20px;
+      }
+
+      nav i {
+        font-size: 40px;
+        margin: 10px;
+      }
+
+      nav ul li:nth-child(2) {
+        color: blue;
+      }
+
+      nav ul li:nth-child(3) {
+        color: gray;
+      }
+
+      nav span {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      main {
+        flex: 1;
+        background: #FFF;
+        padding: 20px;
+        height: 100%;
+      }
+
+      main h2 {
+        padding: 20px 0px;
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: #eee;
+        height: 50px;
+      }
+
+      #logo {
+        padding: 15px;
+      }
+
+      ul {
+        list-style: none;
+        margin-left: -18px;
+      }
+
+      ul li {
+        margin: 15px;
+      }
+
+      blockquote {
+        background: #eee;
+        padding: 10px;
+      }
