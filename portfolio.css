@@ -10,7 +10,8 @@
       }
 
       header {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         justify-content: start;
         align-items: center;
         background: #FFCC80;
