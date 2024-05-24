@@ -11,8 +11,8 @@ ter* {
 
       header {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-content: center;
+        grid-template-columns: 1fr 1fr 30%;
+        justify-content: start;
         align-items: center;
         background: #FFCC80;
         height: 110px;
