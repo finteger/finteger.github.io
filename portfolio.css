@@ -115,3 +115,72 @@
         background: #eee;
         padding: 10px;
       }
+      main {
+        display: grid;
+        justify-content: center;
+        align-items: start;
+        grid-template-columns: 1fr 40%;
+        grid-gap: 20px;
+        overflow-y: scroll;
+      }
+     figure img {
+        width: 83px;
+        height: 80px;
+      }
+      header {
+        background-image: url('https://finteger.github.io/banner.jpeg');
+        background-position: center;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+
+      }
+
+      table {
+        background: linear-gradient(to bottom, lightblue, #fff);
+        border-radius: 10px;
+        padding: 5px;
+        margin-top: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #fff;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+
+      th {
+      border-radius: 5px 5px 0px 0px;
+        padding: 5px;
+        background: lightblue;
+        color: #000;
+      }
+
+      #form {
+        float: right;
+        flex: 0 0 20%;
+      }
+
+      nav {
+        background: #eee !important;
+      }
+      
+      figure img{
+      	box-shadow: 0px 2px 5px #000;
+        border-radius:37px;
+      
+      }
+      h2{
+      	font-family: Roboto;
+      }
+      
+      @media only screen and (max-width: 800px){
+      	table{
+        	display: none;
+        }
+        
+        main{
+        	 grid-template-columns: 1fr;   
+        }
+      }   
