@@ -1,3 +1,5 @@
+  document.addEventListener('DOMContentLoaded', function() {
+
     const profilePicture = document.getElementById('profilePicture');
     const logo = document.getElementById('logo');
     const originalText = logo.innerText;
@@ -30,3 +32,4 @@
         logo.style.opacity = '1';
       }, 300);
     });
+  });
