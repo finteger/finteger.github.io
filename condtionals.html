@@ -1,0 +1,113 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Conditionals in Dart</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="dart-conditionals"
+                  title="Conditionals in Dart"
+                  environment="web"
+                  feedback-link="https://github.com/your-repo/issues">
+    
+      <google-codelab-step label="Using Conditionals" duration="0">
+        <p>Conditionals allow you to execute different blocks of code based on certain conditions. Dart supports several types of conditionals including <code>if</code>, <code>else if</code>, <code>else</code>, <code>switch</code>, and ternary operators.</p>
+<pre><code>```dart
+void main() {
+  int age = 25;
+  double height = 1.75;
+  bool isFlutterAwesome = true;
+  String day = &#39;Monday&#39;;
+
+  // Using if-else statements
+  if (age &lt; 18) {
+    print(&#39;You are a minor.&#39;);
+  } else if (age &lt; 65) {
+    print(&#39;You are an adult.&#39;);
+  } else {
+    print(&#39;You are a senior.&#39;);
+  }
+
+  if (height &lt; 1.6) {
+    print(&#39;You are shorter than average.&#39;);
+  } else {
+    print(&#39;You are of average height or taller.&#39;);
+  }
+
+  if (isFlutterAwesome) {
+    print(&#39;Flutter is awesome!&#39;);
+  } else {
+    print(&#39;Flutter is not awesome.&#39;);
+  }
+
+  // Using switch statement
+  switch (day) {
+    case &#39;Monday&#39;:
+      print(&#39;Start of the work week.&#39;);
+      break;
+    case &#39;Friday&#39;:
+      print(&#39;End of the work week.&#39;);
+      break;
+    case &#39;Saturday&#39;:
+    case &#39;Sunday&#39;:
+      print(&#39;Weekend!&#39;);
+      break;
+    default:
+      print(&#39;Midweek day.&#39;);
+  }
+
+  // Using ternary operator
+  String result = isFlutterAwesome ? &#39;Flutter is awesome!&#39; : &#39;Flutter is not awesome.&#39;;
+  print(result);
+}
+```
+</code></pre>
+<h2 is-upgraded>Explanation</h2>
+<ul>
+<li><strong><code>if</code></strong><strong> Statement</strong>: Executes a block of code if a specified condition is true.</li>
+<li><strong><code>else if</code></strong><strong> Statement</strong>: Executes a block of code if the initial <code>if</code> condition is false and the <code>else if</code> condition is true.</li>
+<li><strong><code>else</code></strong><strong> Statement</strong>: Executes a block of code if all preceding conditions are false.</li>
+<li><strong><code>switch</code></strong><strong> Statement</strong>: Executes different blocks of code based on the value of a variable.</li>
+<li><strong>Ternary Operator</strong>: A shorthand for <code>if-else</code> statements, returning one of two values based on a condition.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercises" duration="0">
+        <h2 is-upgraded>Exercise 1: Are you going golfing?</h2>
+<ol type="1">
+<li>Create a control flow statement to determine if you are going golfing based on variable weather.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
