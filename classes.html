@@ -1,0 +1,97 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Objects and Classes in Dart</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="dart-objects-classes"
+                  title="Objects and Classes in Dart"
+                  environment="web"
+                  feedback-link="https://github.com/your-repo/issues">
+    
+      <google-codelab-step label="Defining Classes" duration="0">
+        <p>Classes in Dart are blueprints for creating objects. They can have fields (variables) and methods (functions). You can define a class using the <code>class</code> keyword, and you can create objects from the class using the <code>new</code> keyword or without it in Dart.</p>
+<ol type="1">
+<li>Try this out in an editor: <pre><code language="language-dart" class="language-dart">void main() {
+  // Creating an object from the class
+  Person person = Person(&#39;Alice&#39;, 30);
+
+  // Accessing fields and methods
+  print(&#39;Name: ${person.name}&#39;);
+  print(&#39;Age: ${person.age}&#39;);
+  person.sayHello();
+}
+
+// Defining a class
+class Person {
+  // Fields
+  String name;
+  int age;
+
+  // Constructor
+  Person(this.name, this.age);
+
+  // Method
+  void sayHello() {
+    print(&#39;Hello, my name is $name and I am $age years old.&#39;);
+  }
+}
+</code></pre>
+</li>
+</ol>
+<h2 is-upgraded>Explanation</h2>
+<ul>
+<li><strong>Fields</strong>: Variables inside a class that hold the state of an object.</li>
+<li><strong>Constructor</strong>: A special method used to initialize objects of the class.</li>
+<li><strong>Methods</strong>: Functions defined inside a class that can operate on the object&#39;s fields and perform actions.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercises" duration="0">
+        <h2 is-upgraded>Exercise 1: Create a <code>Car</code> Class</h2>
+<ol type="1">
+<li>Define a class <code>Car</code> with fields for <code>make</code>, <code>model</code>, and <code>year</code>.</li>
+<li>Add a method <code>displayInfo</code> that prints out the car&#39;s information in a readable format.</li>
+<li>Create an instance of the <code>Car</code> class and call the <code>displayInfo</code> method.</li>
+</ol>
+<h2 is-upgraded>Exercise 2: Inheritance</h2>
+<ol type="1">
+<li>Define a class <code>ElectricCar</code> that inherits from the <code>Car</code> class.</li>
+<li>Add an additional field <code>batteryCapacity</code> to the <code>ElectricCar</code> class.</li>
+<li>Override the <code>displayInfo</code> method in the <code>ElectricCar</code> class to include the <code>batteryCapacity</code> in the output.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
