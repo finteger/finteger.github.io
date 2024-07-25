@@ -1,0 +1,115 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Variables and Data Types in Dart</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="dart-variables-data-types"
+                  title="Variables and Data Types in Dart"
+                  environment="web"
+                  feedback-link="https://github.com/your-repo/issues">
+    
+      <google-codelab-step label="Overview" duration="0">
+        <p>In this codelab, you will learn about variables and data types in Dart. You&#39;ll see how to declare variables, assign values, and understand the different types available in Dart.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="0">
+        <p>Before you begin this codelab, you should have:</p>
+<ul>
+<li>Basic knowledge of programming concepts</li>
+<li>Dart SDK installed on your system</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 1: Setting Up" duration="0">
+        <ol type="1">
+<li>Open your terminal.</li>
+<li>Verify Dart installation by running: <pre><code language="language-sh" class="language-sh">dart --version
+</code></pre>
+</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 2: Declaring Variables" duration="0">
+        <h2 is-upgraded>Understanding Variables</h2>
+<p>Variables are used to store data that can be used and manipulated throughout your program.</p>
+<ol type="1">
+<li>Create a new Dart file:<pre><code language="language-sh" class="language-sh">touch variables.dart
+</code></pre>
+</li>
+<li>Open <code>variables.dart</code> in your favorite editor and add the following code:<pre><code language="language-dart" class="language-dart">void main() {
+  // Declaring variables
+  var name = &#39;John Doe&#39;; // Type inferred as String
+  int age = 30; // Explicitly specifying type
+  double height = 5.9; // Explicitly specifying type
+  bool isStudent = false; // Explicitly specifying type
+
+  // Printing variables
+  print(&#39;Name: $name&#39;);
+  print(&#39;Age: $age&#39;);
+  print(&#39;Height: $height&#39;);
+  print(&#39;Is Student: $isStudent&#39;);
+}
+</code></pre>
+</li>
+<li>Run the program:<pre><code language="language-sh" class="language-sh">dart variables.dart
+</code></pre>
+</li>
+</ol>
+<h2 is-upgraded>Explanation</h2>
+<ul>
+<li><code>var name = 'John Doe';</code> declares a variable with the type inferred as <code>String</code>.</li>
+<li><code>int age = 30;</code> explicitly declares an <code>int</code> type variable.</li>
+<li><code>double height = 5.9;</code> explicitly declares a <code>double</code> type variable.</li>
+<li><code>bool isStudent = false;</code> explicitly declares a <code>bool</code> type variable.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 3: Understanding Data Types" duration="0">
+        <p>Dart supports several built-in data types. Here are the most common ones:</p>
+<h2 is-upgraded>String</h2>
+<p>Used to represent text:</p>
+<pre><code language="language-dart" class="language-dart">String greeting = &#39;Hello, World!&#39;;
+print(greeting);
+</code></pre>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
