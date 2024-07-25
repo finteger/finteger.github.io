@@ -1,0 +1,93 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Functions in Dart</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="dart-functions"
+                  title="Functions in Dart"
+                  environment="web"
+                  feedback-link="https://github.com/your-repo/issues">
+    
+      <google-codelab-step label="Using Functions" duration="0">
+        <p>Functions in Dart allow you to group code into reusable blocks. Functions can take parameters, return values, and perform various operations. Dart supports defining functions using the <code>void</code> keyword or with a return type.</p>
+<ol type="1">
+<li>Try this out in an editor: <pre><code language="language-dart" class="language-dart">void main() {
+  // Calling a function with no return value
+  greetUser(&#39;Alice&#39;);
+
+  // Calling a function with return value
+  int sum = addNumbers(5, 7);
+  print(&#39;The sum is: $sum&#39;);
+
+  // Calling a function with optional parameters
+  String message = getGreeting(&#39;John&#39;, &#39;Doe&#39;);
+  print(message);
+}
+
+// Function with no return value
+void greetUser(String name) {
+  print(&#39;Hello, $name!&#39;);
+}
+
+// Function with a return value
+int addNumbers(int a, int b) {
+  return a + b;
+}
+
+// Function with optional parameters
+String getGreeting(String firstName, [String lastName = &#39;Smith&#39;]) {
+  return &#39;Hello, $firstName $lastName!&#39;;
+}
+</code></pre>
+</li>
+</ol>
+<h2 is-upgraded>Explanation</h2>
+<ul>
+<li><strong>Function with no return value</strong>: Defined with <code>void</code>, and it performs an action without returning a result.</li>
+<li><strong>Function with a return value</strong>: Defined with a specific return type (e.g., <code>int</code>), and it returns a value.</li>
+<li><strong>Function with optional parameters</strong>: Parameters can be optional and have default values if not provided.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercises" duration="0">
+        <h2 is-upgraded>Exercise 1: Calculate Area</h2>
+<ol type="1">
+<li>Create a function to calculate the area of a rectangle. The function should take the width and height as parameters and return the area.</li>
+<li>Create a function to calculate the area of a circle. The function should take the radius as a parameter and return the area. Use the formula: <code>area = π * radius^2</code>.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
