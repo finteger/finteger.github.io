@@ -1,0 +1,170 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Collections in Dart</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="dart-collections"
+                  title="Collections in Dart"
+                  environment="web"
+                  feedback-link="https://github.com/your-repo/issues">
+    
+      <google-codelab-step label="Lists" duration="0">
+        <p>Lists in Dart are ordered collections of items. You can create a list using the <code>List</code> class. Dart supports fixed-length and growable lists. Elements in a list can be accessed by their index, starting from 0.</p>
+<ol type="1">
+<li>Try this out in an editor: <pre><code language="language-dart" class="language-dart">void main() {
+  // Creating a list of integers
+  List&lt;int&gt; numbers = [1, 2, 3, 4, 5];
+
+  // Adding an element
+  numbers.add(6);
+
+  // Accessing elements
+  print(&#39;First number: ${numbers[0]}&#39;);
+
+  // Iterating over the list
+  for (int number in numbers) {
+    print(number);
+  }
+}
+</code></pre>
+</li>
+</ol>
+<h2 is-upgraded>Explanation</h2>
+<ul>
+<li><strong>List Creation</strong>: Lists can be created with initial values or empty. You can also specify the type of elements.</li>
+<li><strong>Adding Elements</strong>: Use the <code>add()</code> method to append elements.</li>
+<li><strong>Accessing Elements</strong>: Access list elements by their index.</li>
+<li><strong>Iteration</strong>: Use a loop to iterate over the list elements.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Maps" duration="0">
+        <p>Maps are collections of key-value pairs. The key is unique, and it is used to access the corresponding value. Dart&#39;s <code>Map</code> class supports various methods for adding, accessing, and modifying key-value pairs.</p>
+<ol type="1">
+<li>Try this out in an editor: <pre><code language="language-dart" class="language-dart">void main() {
+  // Creating a map
+  Map&lt;String, String&gt; capitals = {
+    &#39;USA&#39;: &#39;Washington, D.C.&#39;,
+    &#39;France&#39;: &#39;Paris&#39;,
+    &#39;Japan&#39;: &#39;Tokyo&#39;,
+  };
+
+  // Adding a key-value pair
+  capitals[&#39;Germany&#39;] = &#39;Berlin&#39;;
+
+  // Accessing a value
+  print(&#39;Capital of France: ${capitals[&#39;France&#39;]}&#39;);
+
+  // Iterating over the map
+  capitals.forEach((key, value) {
+    print(&#39;The capital of $key is $value.&#39;);
+  });
+}
+</code></pre>
+</li>
+</ol>
+<h2 is-upgraded>Explanation</h2>
+<ul>
+<li><strong>Map Creation</strong>: Maps are initialized with key-value pairs or empty. Keys must be unique.</li>
+<li><strong>Adding Key-Value Pairs</strong>: Use the assignment operator to add new key-value pairs.</li>
+<li><strong>Accessing Values</strong>: Retrieve values using their corresponding keys.</li>
+<li><strong>Iteration</strong>: Use <code>forEach</code> to iterate over map entries.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Sets" duration="0">
+        <p>Sets are collections of unique items. Dart&#39;s <code>Set</code> class supports operations to add, remove, and check for elements. Sets do not allow duplicate values.</p>
+<ol type="1">
+<li>Try this out in an editor: <pre><code language="language-dart" class="language-dart">void main() {
+  // Creating a set of integers
+  Set&lt;int&gt; numbers = {1, 2, 3, 4, 5};
+
+  // Adding an element
+  numbers.add(6);
+
+  // Removing an element
+  numbers.remove(3);
+
+  // Checking if an element is present
+  print(&#39;Contains 4? ${numbers.contains(4)}&#39;);
+
+  // Iterating over the set
+  for (int number in numbers) {
+    print(number);
+  }
+}
+</code></pre>
+</li>
+</ol>
+<h2 is-upgraded>Explanation</h2>
+<ul>
+<li><strong>Set Creation</strong>: Sets are created with initial values or empty.</li>
+<li><strong>Adding and Removing Elements</strong>: Use <code>add()</code> to include an element and <code>remove()</code> to delete one.</li>
+<li><strong>Checking for Presence</strong>: Use <code>contains()</code> to check for the existence of an element.</li>
+<li><strong>Iteration</strong>: Use a loop to iterate over set elements.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercises" duration="0">
+        <h2 is-upgraded>Exercise 1: List Operations</h2>
+<ol type="1">
+<li>Create a list of strings with your favorite fruits.</li>
+<li>Add a new fruit to the list.</li>
+<li>Remove a fruit from the list.</li>
+<li>Print all fruits in the list using a loop.</li>
+</ol>
+<h2 is-upgraded>Exercise 2: Map Operations</h2>
+<ol type="1">
+<li>Create a map where the keys are employee names and the values are their roles.</li>
+<li>Add a new employee to the map.</li>
+<li>Update the role of an existing employee.</li>
+<li>Print all employees and their roles using a loop.</li>
+</ol>
+<h2 is-upgraded>Exercise 3: Set Operations</h2>
+<ol type="1">
+<li>Create a set of integers.</li>
+<li>Add a new integer to the set.</li>
+<li>Remove an integer from the set.</li>
+<li>Check if a specific integer is present in the set.</li>
+<li>Print all integers in the set.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
