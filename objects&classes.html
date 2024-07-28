@@ -1,0 +1,98 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Objects and Classes in Dart</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="dart-objects-classes"
+                  title="Objects and Classes in Dart"
+                  environment="web"
+                  feedback-link="https://github.com/your-repo/issues">
+    
+      <google-codelab-step label="Using Objects and Classes" duration="0">
+        <p>In Dart, classes are used to create custom types by grouping related properties and methods. Objects are instances of classes, allowing you to create multiple instances with similar characteristics.</p>
+<ol type="1">
+<li>Try this out in an editor: <pre><code language="language-dart" class="language-dart">void main() {
+  // Creating an instance of the Person class
+  Person person1 = Person(&#39;Alex&#39;, 25);
+  person1.describe();
+
+  // Creating another instance of the Person class
+  Person person2 = Person(&#39;Jordan&#39;, 30);
+  person2.describe();
+}
+
+class Person {
+  String name;
+  int age;
+
+  // Constructor
+  Person(this.name, this.age);
+
+  // Method to describe the person
+  void describe() {
+    print(&#39;Name: $name, Age: $age&#39;);
+  }
+}
+</code></pre>
+</li>
+</ol>
+<h2 is-upgraded>Explanation</h2>
+<ul>
+<li><strong>Class Definition</strong>: The <code>Person</code> class defines properties (<code>name</code> and <code>age</code>) and a method (<code>describe</code>).</li>
+<li><strong>Constructor</strong>: The constructor initializes the properties.</li>
+<li><strong>Creating Instances</strong>: Instances of the class are created using the <code>new</code> keyword (optional in Dart).</li>
+<li><strong>Method</strong>: The <code>describe</code> method prints the properties of the object.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercises" duration="0">
+        <h2 is-upgraded>Exercise 1: Create a Book Class</h2>
+<ol type="1">
+<li>Define a class called <code>Book</code> with properties for the title, author, and number of pages.</li>
+<li>Create a constructor to initialize these properties.</li>
+<li>Add a method to print the details of the book.</li>
+<li>Create two instances of the <code>Book</code> class and call the method to print their details.</li>
+</ol>
+<h2 is-upgraded>Exercise 2: Create a Car Class</h2>
+<ol type="1">
+<li>Define a class called <code>Car</code> with properties for the make, model, and year.</li>
+<li>Create a constructor to initialize these properties.</li>
+<li>Add a method to print the details of the car.</li>
+<li>Create two instances of the <code>Car</code> class and call the method to print their details.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
