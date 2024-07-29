@@ -1,0 +1,104 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Error Handling in Dart</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="dart-error-handling"
+                  title="Error Handling in Dart"
+                  environment="web"
+                  feedback-link="https://github.com/your-repo/issues">
+    
+      <google-codelab-step label="Using Error Handling" duration="0">
+        <p>Error handling in Dart is essential for creating robust applications. Dart provides several mechanisms to handle errors, including <code>try-catch</code>, <code>try-catch-finally</code>, and <code>on-catch</code> blocks. Using these constructs, you can manage exceptions and handle errors gracefully.</p>
+<ol type="1">
+<li>Try this out in an editor: <pre><code language="language-dart" class="language-dart">import &#39;dart:io&#39;;
+
+void main() {
+  // Handling synchronous errors
+  try {
+    final file = File(&#39;path/to/file.txt&#39;);
+    final contents = file.readAsStringSync();
+    print(contents);
+  } catch (e) {
+    print(&#39;Error reading file: $e&#39;);
+  }
+
+  // Handling asynchronous errors
+  fetchFileContent(&#39;path/to/another_file.txt&#39;);
+}
+
+Future&lt;void&gt; fetchFileContent(String path) async {
+  try {
+    final file = File(path);
+    final contents = await file.readAsString();
+    print(contents);
+  } catch (e) {
+    print(&#39;Error reading file: $e&#39;);
+  } finally {
+    print(&#39;Completed file read operation.&#39;);
+  }
+}
+</code></pre>
+</li>
+</ol>
+<h2 is-upgraded>Explanation</h2>
+<ul>
+<li><strong>Synchronous Error Handling</strong>: Using <code>try-catch</code>, you can handle errors that occur during synchronous operations, like reading a file using <code>readAsStringSync()</code>.</li>
+<li><strong>Asynchronous Error Handling</strong>: Using <code>try-catch</code> within an <code>async</code> function, you can handle errors during asynchronous operations, like reading a file using <code>readAsString()</code>.</li>
+<li><strong>Finally Block</strong>: The <code>finally</code> block is used to execute code regardless of whether an error occurred or not. It is often used for cleanup tasks.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercises" duration="0">
+        <h2 is-upgraded>Exercise 1: Handle Division by Zero</h2>
+<ol type="1">
+<li>Create a function to perform division of two numbers. The function should take two parameters (numerator and denominator) and return the result.</li>
+<li>Use error handling to manage the case where the denominator is zero, and print an appropriate error message.</li>
+</ol>
+<h2 is-upgraded>Exercise 2: Fetch Data from an API</h2>
+<ol type="1">
+<li>Create a function to fetch data from an API using Dart&#39;s <code>http</code> package.</li>
+<li>Use error handling to manage network errors or invalid responses, and print appropriate error messages.</li>
+</ol>
+<h2 is-upgraded>Error Handling Best Practices</h2>
+<ul>
+<li>Always handle exceptions in asynchronous code to avoid unhandled exceptions.</li>
+<li>Use specific exception types to catch particular errors, making your error handling more precise.</li>
+<li>Clean up resources in a <code>finally</code> block to ensure that cleanup code always runs.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
