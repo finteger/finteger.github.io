@@ -110,11 +110,7 @@ You can style a button based on its state using `WidgetStateProperty`.
 - Finally, a button's `style` controls its appearance: color, border, and so on.
 
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/ElevatedButton.gif",
-caption: "This figure shows an ElevatedButton with the text \"Enabled\" being clicked."
-alt: "A GIF of an elevated button with the text \"Enabled\""
-code:"
+
 ```dart
 int count = 0;
 
@@ -133,7 +129,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 
 <br>
@@ -165,11 +161,7 @@ Flutter's `Text` widget displays text on the screen,
 but doesn't allow users to highlight or copy the text.
 `SelectableText` displays a string of _user-selectable_ text.
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/SelectableText.gif",
-caption: "This figure shows a cursor highlighting a portion of a string of text."
-alt: 'A GIF of a cursor highlighting two lines of text from a paragraph.'
-code:"
+
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -181,7 +173,7 @@ Where civil blood makes civil hands unclean.
 From forth the fatal loins of these two foes''');
 }
 ```
-" %}
+
 
 > <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
 > [SelectableText (Widget of the Week)][]
@@ -195,11 +187,7 @@ From forth the fatal loins of these two foes''');
 different text styles. It's not for handling user input,
 but is useful if you're allowing users edit and format text.
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/RichText.png",
-caption: "This figure shows a string of text formatted with different text styles."
-alt: 'A screenshot of the text "Hello bold world!" with the word "bold" in bold font.'
-code:"
+
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -215,7 +203,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 > <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
 > [Rich Text (Widget of the Week)][]
@@ -255,11 +243,7 @@ The class supports other configurable properties, such as
 `obscureText` that turns each letter into a `readOnly` circle as its entered and
 `readOnly` which prevents the user from changing the text.
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/TextField.gif",
-caption: "This figure shows text being typed into a TextField with a selected border and label."
-alt: "A GIF of a text field with the label \"Mascot Name\", purple focus border and the phrase \"Dash the hummingbird\" being typed in."
-code:"
+
 ```dart
 final TextEditingController _controller = TextEditingController();
 
@@ -274,7 +258,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 > <span class="material-symbols" aria-hidden="true">star</span> **Checkpoint**: 
 > Complete this 4-part cookbook series that walks
@@ -399,14 +383,7 @@ A `SegmentedButton` has a few relevant properties:
   For example, `style` takes a `ButtonStyle`,
   providing a way to configure a `selectedIcon`.
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/segmented-button.gif",
-caption: "This figure shows a SegmentedButton, each segment with an icon and
-text representing its value."
-alt: "A GIF of a SegmentedButton with 4 segments: Day, Week, Month, and Year.
-Each has a calendar icon to represent its value and a text label.
-Day is first selected, then week and month, then year."
-code:"
+
 
 ```dart
 enum Calendar { day, week, month, year }
@@ -449,7 +426,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 
 ### Chip
@@ -477,13 +454,7 @@ You will typically use `Wrap`, a widget that displays its children in
 multiple horizontal or vertical runs, to make sure your chips wrap and
 don't get cut off at the edge of your app.
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/chip.png",
-caption: "This figure shows two rows of Chip widgets, each containing a circular
-leading profile image and content text."
-alt: "A screenshot of 4 Chips split over two rows with a leading circular
-profile image with content text."
-code:"
+
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -520,7 +491,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 [InputChip]: {{site.api}}/flutter/material/InputChip-class.html
 [ChoiceChip]: {{site.api}}/flutter/material/ChoiceChip-class.html
@@ -547,14 +518,7 @@ Configuration parameters include the following:
 - Additional parameters are also available for
   customizing the widget's look and behavior.
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/dropdownmenu.gif",
-caption: "This figure shows a DropdownMenu widget with 5 value options. Each
-option's text color is styled to represent the color value."
-alt: "A GIF the DropdownMenu widget that is selected, it displays 5 options:
-Blue, Pink, Green, Orange, and Grey. The option text is displayed in the color
-of its value."
-code:"
+
 ```dart
 enum ColorLabel {
   blue('Blue', Colors.blue),
@@ -600,7 +564,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 > <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
 > [DropdownMenu (Widget of the Week)][]
@@ -621,14 +585,7 @@ Configuration parameters for the `Slider` widget:
   handle along the track.
 
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/slider.gif",
-caption: "This figure shows a slider widget with a value ranging from 0.0 to 5.0
-broken up into 5 divisions. It shows the current value as a label as the dial 
-is dragged."
-alt: "A GIF of a slider that has the dial dragged left to right in increments 
-of 1, from 0.0 to 5.0"
-code:"
+
 ```dart
 double _currentVolume = 1;
 
@@ -647,7 +604,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 > <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
 > [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
@@ -688,12 +645,7 @@ The configuration for `Checkbox` and `Switch` contain:
 
 ### Checkbox
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/checkbox.gif",
-caption: "This figure shows a checkbox being checked and unchecked."
-alt: "A GIF that shows a pointer clicking a checkbox 
-and then clicking again to uncheck it."
-code:"
+
 ```dart
 bool isChecked = false;
 
@@ -710,17 +662,11 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 ### Switch
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/Switch.gif",
-caption: "This figure shows a Switch widget that is toggled on and off."
-alt: "A GIF of a Switch widget that is toggled on and off. In its off state,
-it is gray with dark gray borders. In its on state, 
-it is red with a light red border."
-code:"
+
 ```dart
 bool light = true;
 
@@ -739,7 +685,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 ### Radio
 
@@ -754,13 +700,7 @@ the other radio buttons are unselected.
 - `Radio` also has an `onChanged` callback that
   gets triggered when users click it, like `Switch` and `Checkbox`
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/Radio.gif",
-caption: "This figure shows a column of ListTiles containing a radio button and
-label, where only one radio button can be selected at a time."
-alt: "A GIF of 4 ListTiles in a column, each containing a leading Radio button
-and title text. The Radio buttons are selected in order from top to bottom."
-code:"
+
 ```dart
 enum Character { musician, chef, firefighter, artist }
 
@@ -821,21 +761,14 @@ class _RadioExampleState extends State<RadioExample> {
   }
 }
 ```
-" %}
+
 
 #### Bonus: CheckboxListTile & SwitchListTile
 
 These convenience widgets are the same checkbox and switch widgets,
 but support a label (as a `ListTile`).
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/SpecialListTiles.gif",
-caption: "This figure shows a column containing a CheckboxListTile and
-a SwitchListTile being toggled."
-alt: "A ListTile with a leading icon, title text, and a trailing checkbox being
-checked and unchecked. It also shows a ListTile with a leading icon, title text
-and a switch being toggled on and off."
-code:"
+
 ```dart
 double timeDilation = 1.0;
 bool _lights = false;
@@ -868,7 +801,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 > <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
 > [CheckboxListTile (Widget of the Week)][]
@@ -911,14 +844,7 @@ Activate by calling the `showDatePicker` function,
 which returns a `Future<DateTime>`,
 so don't forget to await the asynchronous function call!
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/DatePicker.gif",
-caption: "This figure shows a DatePicker that is displayed when the
-\"Pick a date\" button is clicked."
-alt: "A GIF of a pointer clicking a button that says \"Pick a date\",
-then shows a date picker. The date Friday, August 30 is selected and the \"OK\"
-button is clicked."
-code:"
+
 ```dart
 DateTime? selectedDate;
 
@@ -952,7 +878,7 @@ Widget build(BuildContext context) {
   ]);
 }
 ```
-" %}
+
 
 ### TimePickerDialog
 
@@ -962,14 +888,7 @@ Instead of returning a `Future<DateTime>`,
 `showTimePicker` instead returns a `Future<TimeOfDay>`.
 Once again, don't forget to await the function call!
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/TimePicker.gif",
-caption: "This figure shows a TimePicker that is displayed when the 
-\"Pick a time\" button is clicked."
-alt: "A GIF of a pointer clicking a button that says \"Pick a time\", then shows
- a time picker. The time picker shows a circular clock as the cursor moves the 
- hour hand, then minute hand, selects PM, then the \"OK\" button is clicked."
-code:"
+
 ```dart
 TimeOfDay? selectedTime;
 
@@ -999,7 +918,7 @@ Widget build(BuildContext context) {
   ]);
 }
 ```
-" %}
+
 
 :::tip
 Calling `showDatePicker()` and `showTimePicker()`
@@ -1033,13 +952,7 @@ It has a number of configuration parameters, including:
 - It's important to include a `key` object as well so that they can be uniquely
   identified from sibling `Dismissible` widgets in the widget tree.
 
-{% render docs/code-and-image.md,
-image:"fwe/user-input/Dismissible.gif",
-caption: "This figure shows a list of Dismissible widgets that each contain a
-ListTile. Swiping across the ListTile reveals a green background makes the tile
-disappear."
-alt: "A screenshot of three widgets, spaced evenly from each other."
-code:"
+
 ```dart
 List<int> items = List<int>.generate(100, (int index) => index);
 
@@ -1069,7 +982,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-" %}
+
 
 > <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
 > [Dismissible (Widget of the Week)][]
