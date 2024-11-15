@@ -10,23 +10,24 @@ toc: false
 
 
 <div class="row">
-  <div class="col-md-6">
+<div class="col-md-6">
 
-    ## Find your way with Flutter!
+## Find your way with Flutter!
 
-    If you are new to Flutter, and have already worked
-    through [your first Flutter codelab](https://flutter.dev/docs/get-started/codelab),
-    this section of the website is for you!
+If you are new to Flutter, and have already worked
+through [your first Flutter codelab](https://flutter.dev/docs/get-started/codelab),
+this section of the website is for you!
 
-    The goal here is to guide you through some next
-    steps of learning Flutter. It's not about teaching
-    you how to _program_, it's about teaching you
-    how Flutter works.
+The goal here is to guide you through some next
+steps of learning Flutter. It's not about teaching
+you how to _program_, it's about teaching you
+how Flutter works.
 
-  </div>
-  <div class="col-md-6">
-    {% render docs/app-figure.md, img-class:"w-75", image:"fwe/dash-search.png", alt:"Dash with magnifying glass" %}
-  </div>
+
+</div>
+<div class="col-md-6">
+  {% render docs/app-figure.md, img-class:"w-75", image:"fwe/dash-search.png", alt:"Dash with magnifying glass" %}
+</div>
 </div>
 
 
@@ -41,20 +42,18 @@ new subject pages in this section.
 We suggest that you work through the
 following subjects in the listed order.
 
- 1. [Intro to Dart](https://flutter.dev/docs/get-started/fundamentals/dart) _(Optional)_
-    As you might know, Flutter uses the [Dart language](https://dart.dev).
+ 1. [Intro to Dart][] _(Optional)_
+    As you might know, Flutter uses the [Dart language][].
     If you have experience with other object-oriented
     languages, like Java, C++, or Swift,
     Dart should feel familiar to you.
     As of this writing,
-    [Dart is one of the fastest-growing languages](https://twitter.com/MiSvTh/status/1732002450641400276?cxt),
+    [Dart is one of the fastest growing languages][dart-lang],
     in part, thanks to Flutter.
-
- 2. [Widget fundamentals](https://flutter.dev/docs/get-started/fundamentals/widgets)
+ 2. [Widget fundamentals][]
     Learn about one of the primary building blocks
     of a Flutter application, widgets.
-
- 3. [Layout](https://flutter.dev/docs/get-started/fundamentals/layout)
+ 3. [Layout][]
     Flutter is different from other UI frameworks
     in that you create the layout programmatically.
     This allows you to compose widgets,
@@ -62,20 +61,17 @@ following subjects in the listed order.
     to realize your own layout vision.
     It also facilitates designing a UI to
     optimize any screen where your app might be used.
-
- 4. [State management](https://flutter.dev/docs/get-started/fundamentals/state-management)
-    Learn how to share state between widgets and notify other parts of your app
+ 4. [State management][]
+    Learn how share state between widgets and notify other parts of your app
     when the state changes.
     See how to implement MVVM in Flutter to manage state effectively
     for small to medium-sized apps.
-
- 5. [Handling user input](https://flutter.dev/docs/get-started/fundamentals/user-input)
+ 5. [Handling user input][]
     Learn about Flutter's widgets that support
     interactivity, like buttons and text.
     Also, learn how to add interactivity to
     a widget that doesn't already support it.
-
- 6. [Networking and data](https://flutter.dev/docs/get-started/fundamentals/networking)
+ 6. [Networking and data][]
     Networking is a very large topic,
     so this section focuses on basic networking
     functionality, such as how to retrieve
@@ -83,20 +79,17 @@ following subjects in the listed order.
     how to convert to and from JSON,
     how to use authentication, 
     how to implement asynchronicity, and more.
-
- 7. [Local data and caching](https://flutter.dev/docs/get-started/fundamentals/local-caching)
+ 7. [Local data and caching][]
     Learn about different techniques for caching
     local data.
 
-## Links
-
-- [Dart language]: [https://dart.dev](https://dart.dev)
-- [Dart is one of the fastest-growing languages]: [https://twitter.com/MiSvTh/status/1732002450641400276?cxt](https://twitter.com/MiSvTh/status/1732002450641400276?cxt)
-- [Intro to Dart]: [https://flutter.dev/docs/get-started/fundamentals/dart](https://flutter.dev/docs/get-started/fundamentals/dart)
-- [Layout]: [https://flutter.dev/docs/get-started/fundamentals/layout](https://flutter.dev/docs/get-started/fundamentals/layout)
-- [State management]: [https://flutter.dev/docs/get-started/fundamentals/state-management](https://flutter.dev/docs/get-started/fundamentals/state-management)
-- [Handling user input]: [https://flutter.dev/docs/get-started/fundamentals/user-input](https://flutter.dev/docs/get-started/fundamentals/user-input)
-- [Networking and data]: [https://flutter.dev/docs/get-started/fundamentals/networking](https://flutter.dev/docs/get-started/fundamentals/networking)
-- [Local data and caching]: [https://flutter.dev/docs/get-started/fundamentals/local-caching](https://flutter.dev/docs/get-started/fundamentals/local-caching)
-- [Widget fundamentals]: [https://flutter.dev/docs/get-started/fundamentals/widgets](https://flutter.dev/docs/get-started/fundamentals/widgets)
-- [Your first Flutter codelab]: [https://flutter.dev/docs/get-started/codelab](https://flutter.dev/docs/get-started/codelab)
+[Dart language]: {{site.dart-site}}
+[dart-lang]: https://twitter.com/MiSvTh/status/1732002450641400276?cxt
+[Intro to Dart]: /get-started/fundamentals/dart
+[Layout]: /get-started/fundamentals/layout
+[State management]: /get-started/fundamentals/state-management
+[Handling user input]: /get-started/fundamentals/user-input
+[Networking and data]: /get-started/fundamentals/networking
+[Local data and caching]: /get-started/fundamentals/local-caching
+[Widget fundamentals]: /get-started/fundamentals/widgets
+[your first Flutter codelab]: {{site.codelabs}}/codelabs/flutter-codelab-first
