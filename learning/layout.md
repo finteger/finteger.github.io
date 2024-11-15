@@ -560,7 +560,6 @@ from its parent, along with the widgets 'BuildContext'.
 With these constraints, you can return a different
 widget based on the available space.
 
-{% ytEmbed 'IYDVcriKjsw', 'LayoutBuilder (Flutter Widget of the Week)' %}
 
 In the following example, 
 the widget returned by the `LayoutBuilder` 
