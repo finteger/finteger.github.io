@@ -415,7 +415,6 @@ If there was only one type error you should be
 prepared to confront when you first start building
 Flutter apps, it would be this one.
 
-{% ytEmbed 'jckqXR5CrPI', 'Decoding Flutter: Unbounded height and width' %}
 
 :::note The Widget inspector
 Flutter has a robust suite of DevTools that
