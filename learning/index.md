@@ -25,9 +25,7 @@ how Flutter works.
 
 
 </div>
-<div class="col-md-6">
-  {% render docs/app-figure.md, img-class:"w-75", image:"fwe/dash-search.png", alt:"Dash with magnifying glass" %}
-</div>
+
 </div>
 
 
